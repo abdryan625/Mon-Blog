@@ -93,7 +93,7 @@ p {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
-/* --- SECTIONS --- */
+/* --- SECTIONS (Astuces, Tutoriels, Contact) --- */
 section {
     scroll-margin-top: 100px;
 }
@@ -143,6 +143,7 @@ h2 {
 }
 
 /* --- RESPONSIVE (TÉLÉPHONE) --- */
+/* Ce bloc DOIT être en dernier pour écraser les règles du PC */
 @media (max-width: 768px) {
     header .container {
         flex-direction: column;
