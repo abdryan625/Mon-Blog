@@ -47,7 +47,7 @@ header .container {
 }
 
 .logo {
-    font-family: 'MaSuperPolice', sans-serif;
+    font-family: 'MaSuperPolice', Arial, sans-serif;
     font-size: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
