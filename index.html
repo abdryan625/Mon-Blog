@@ -4,7 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css?v=6">
+    <meta name="description"
+        content="Benin Tech — Astuces, tutoriels et outils pour mettre la technologie au service de nos réalités béninoises.">
+    <!-- Le ?v=6 permet de forcer le navigateur à mettre à jour le CSS -->
+    <link rel="stylesheet" href="style.css?v=7">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Benin Tech</title>
 </head>
@@ -13,14 +16,17 @@
     <header>
         <div class="container">
             <a href="#" class="logo">BENIN TECH.</a>
-            <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#astuces">Astuces</a></li>
-                <li><a href="#tutoriels">Tutoriels</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <nav aria-label="Menu principal">
+                <ul>
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#astuces">Astuces</a></li>
+                    <li><a href="#tutoriels">Tutoriels</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
+
     <section class="hero">
         <div class="hero-text">
             <span class="badge">Bienvenue sur Benin Tech</span>
@@ -30,6 +36,7 @@
             </p>
         </div>
     </section>
+
     <section id="astuces">
         <h2>Astuces</h2>
         <p>Des raccourcis intelligents et des outils gratuits pour gagner du temps dans vos études, votre travail ou vos
@@ -43,6 +50,7 @@
             en mode avion), suivis de 5 minutes de pause. C'est scientifiquement prouvé pour booster la concentration
             sans s'épuiser.</p>
     </section>
+
     <section id="tutoriels">
         <h2>Tutoriels</h2>
         <p>Des guides pratiques étape par étape pour résoudre vos blocages du quotidien, optimiser vos appareils et
@@ -51,7 +59,7 @@
         <h3>1. Redonner de la vitesse à un ordinateur qui rame (Windows)</h3>
         <ul>
             <li><strong>Couper les applis lourdes au démarrage :</strong> Ouvrez le <em>Gestionnaire des tâches</em>
-                (<code>Ctrl + Maj + Échap</code>), allez dans l'onglet <strong>Démarrage</strong>, repèrez les logiciels
+                (<code>Ctrl + Maj + Échap</code>), allez dans l'onglet <strong>Démarrage</strong>, repérez les logiciels
                 marqués "Impact élevé" inutiles à l'allumage et cliquez sur <strong>Désactiver</strong>.</li>
             <li><strong>Vider les fichiers temporaires cachés :</strong> Appuyez sur <code>Windows + R</code>, tapez
                 <code>%temp%</code> et validez. Sélectionnez tout (<code>Ctrl + A</code>) et supprimez
@@ -78,6 +86,7 @@
             </li>
         </ul>
     </section>
+
     <section id="contact">
         <h2>Contact</h2>
         <p><strong>Une question, un blocage ou une suggestion d'astuce ?</strong> Si vous rencontrez un souci sur votre
@@ -85,10 +94,14 @@
             n'hésitez pas à nous écrire.</p>
 
         <ul>
-            <li><a href="https://facebook.com/benintech" target="_blank">Facebook — Benin Tech</a></li>
-            <li><a href="https://wa.me/22900000000" target="_blank">WhatsApp — Chaîne &amp; Entraide</a></li>
-            <li><a href="https://linkedin.com/company/benintech" target="_blank">LinkedIn — Benin Tech</a></li>
-            <li><a href="https://x.com/benintech" target="_blank">X (Twitter) — @benintech</a></li>
+            <li><a href="https://facebook.com/benintech" target="_blank" rel="noopener noreferrer">Facebook — Benin
+                    Tech</a></li>
+            <li><a href="https://wa.me/22900000000" target="_blank" rel="noopener noreferrer">WhatsApp — Chaîne &amp;
+                    Entraide</a></li>
+            <li><a href="https://linkedin.com/company/benintech" target="_blank" rel="noopener noreferrer">LinkedIn —
+                    Benin Tech</a></li>
+            <li><a href="https://x.com/benintech" target="_blank" rel="noopener noreferrer">X (Twitter) — @benintech</a>
+            </li>
         </ul>
     </section>
 </body>

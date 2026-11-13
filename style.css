@@ -1,23 +1,62 @@
 /* --- POLICES --- */
+
 @font-face {
     font-family: 'Satoshi';
     src: url('Fonts/Satoshi-Light.woff2') format('woff2');
-    font-weight: 400;
+    font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
-/* --- BASE --- */
+/* --- RESET & BASE --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Satoshi', sans-serif;
-    background-image: url('images/technologie\ .webp');
+    font-family: 'Satoshi', Arial, sans-serif;
+
+    background-image: url('images/technologie.webp');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-attachment: scroll;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Un peu plus sombre pour faire ressortir le texte */
     background-blend-mode: overlay;
     margin: 0;
     min-height: 100vh;
     color: white;
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+@media (min-width: 769px) {
+    body {
+        background-attachment: fixed;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+code {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    word-break: break-word;
+    font-family: 'Courier New', monospace;
 }
 
 /* --- HEADER --- */
@@ -25,7 +64,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(10, 43, 25, 0.6);
+    background: rgba(10, 43, 25, 0.7);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -35,6 +74,8 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 15px 20px;
@@ -43,6 +84,7 @@ header .container {
 .logo {
     font-family: 'Satoshi', Arial, sans-serif;
     font-size: 28px;
+    /* On force le navigateur à simuler le gras, car on n'a pas le fichier Bold */
     font-weight: bold;
     letter-spacing: 1px;
     color: #eb1101;
@@ -52,8 +94,9 @@ header .container {
 /* --- LIENS ET LISTES --- */
 a {
     text-decoration: none;
-    color: red;
+    color: #ff4d4d;
     transition: color 0.3s;
+    font-weight: bold;
 }
 
 a:hover {
@@ -68,6 +111,9 @@ ul {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
@@ -77,14 +123,30 @@ ul {
     flex-direction: column;
     gap: 20px;
     align-items: center;
-    padding: 80px 20px;
+    padding: clamp(40px, 10vw, 80px) 20px;
     text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 14px;
+    background: rgba(235, 17, 1, 0.2);
+    border: 1px solid rgba(235, 17, 1, 0.6);
+    border-radius: 50px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-weight: bold;
 }
 
 h1 {
     color: #eb1101;
     text-decoration: underline #6b835e;
+    text-underline-offset: 6px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    font-size: clamp(28px, 8vw, 48px);
+    margin: 0;
+    font-weight: bold;
 }
 
 p {
@@ -99,19 +161,29 @@ section {
 #astuces,
 #tutoriels,
 #contact {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Plus sombre pour la lisibilité */
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
     border-radius: 15px;
-    padding: 40px 20px;
+    padding: clamp(20px, 5vw, 40px) 20px;
     margin: 20px auto;
     max-width: 1100px;
+    width: calc(100% - 40px);
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 h2 {
     display: flex;
     justify-content: center;
+    font-size: clamp(22px, 5vw, 32px);
+    margin-top: 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-weight: bold;
 }
 
 #astuces p,
@@ -126,10 +198,24 @@ h2 {
     gap: 15px;
     max-width: 800px;
     margin: 0 auto;
+    padding: 0;
+}
+
+#tutoriels h3 {
+    font-size: clamp(18px, 4vw, 22px);
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
 
 #tutoriels li {
     text-align: left;
+}
+
+#contact ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
 }
 
 #contact a {
@@ -140,56 +226,72 @@ h2 {
     color: #eb1101;
 }
 
-/* --- RESPONSIVE (TÉLÉPHONE) --- */
-/* Ce bloc DOIT être en dernier pour écraser les règles du PC */
+/* --- RESPONSIVE : TABLETTE (≤ 768px) --- */
 @media (max-width: 768px) {
+    .logo {
+        font-size: 22px;
+    }
+
     header .container {
         flex-direction: column;
         gap: 10px;
-        padding: 10px;
+        padding: 12px 15px;
     }
 
-    .logo {
-        font-size: 24px;
-        text-align: center;
-        display: block;
-    }
-
-    ul {
-        gap: 10px;
-        padding: 0;
-        flex-wrap: wrap;
+    header ul {
         justify-content: center;
+        width: 100%;
+        gap: 15px;
     }
 
-    header a {
+    h1 {
+        font-size: 32px;
+    }
+
+    #tutoriels ul {
+        gap: 12px;
+    }
+}
+
+/* --- RESPONSIVE : MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    header ul {
+        gap: 10px;
         font-size: 14px;
-        padding: 5px;
+    }
+
+    h1 {
+        font-size: 26px;
+        text-underline-offset: 4px;
+    }
+
+    h2 {
+        font-size: 20px;
     }
 
     .hero-text {
         padding: 40px 15px;
     }
 
-    h1 {
-        font-size: 2rem;
-    }
-
     #astuces,
     #tutoriels,
     #contact {
+        width: calc(100% - 20px);
         padding: 20px 15px;
+        border-radius: 10px;
         margin: 10px auto;
-        width: 95%;
     }
 
-    #astuces p,
-    #tutoriels p {
-        font-size: 14px;
+    p {
+        font-size: 15px;
+        line-height: 1.6;
     }
 
-    #tutoriels li {
-        text-align: left;
-        font-size: 14px;
+    #contact ul {
+        gap: 10px;
     }
 }
