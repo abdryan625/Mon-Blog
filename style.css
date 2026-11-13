@@ -13,7 +13,7 @@
 
 /* --- BASE --- */
 body {
-    font-family: 'Satoshi', sans-serif;
+    font-family: 'Satoshi-Light', sans-serif;
     background-image: url('images/technologie\ .webp');
     background-size: cover;
     background-position: center;
@@ -154,44 +154,24 @@ h2 {
     color: #eb1101;
 }
 
-/* Quand l'écran fait 768px de large ou moins (téléphones et petites tablettes) */
 @media (max-width: 768px) {
-
-    /* 1. Le header : on empile le logo et les liens */
     header .container {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        padding: 10px 15px;
+        /* Réduit l'espace autour */
     }
 
-    /* 2. Les liens : on les laisse en ligne mais on les centre */
+    .logo {
+        font-size: 20px;
+        /* Logo plus petit */
+    }
+
     ul {
-        justify-content: center;
-        padding: 0;
+        gap: 12px;
+        /* Moins d'espace entre les liens */
     }
 
-    /* 3. Le hero : on réduit les marges */
-    .hero-text {
-        padding: 40px 15px;
-    }
-
-    /* 4. Le titre principal : on le rend plus petit pour qu'il rentre */
-    h1 {
-        font-size: 2rem;
-        /* Au lieu de la taille par défaut qui est trop grande */
-    }
-
-    /* 5. Les sections : on réduit le padding pour gagner de la place */
-    #astuces,
-    #tutoriels,
-    #contact {
-        padding: 20px 15px;
-        margin: 10px auto;
-    }
-
-    /* 6. Les liens du header : on les rend plus faciles à taper avec le doigt */
     header a {
-        padding: 8px;
-        display: inline-block;
+        font-size: 14px;
+        /* Liens plus petits */
     }
 }
