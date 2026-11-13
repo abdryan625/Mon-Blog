@@ -155,23 +155,59 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
+    /* 1. Le header : on empile le logo et les liens */
     header .container {
-        padding: 10px 15px;
-        /* Réduit l'espace autour */
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
     }
 
+    /* 2. Le logo : on le centre et on le réduit */
     .logo {
-        font-size: 20px;
-        /* Logo plus petit */
+        font-size: 24px;
+        text-align: center;
     }
 
+    /* 3. Les liens : centrés et sur plusieurs lignes si besoin */
     ul {
-        gap: 12px;
-        /* Moins d'espace entre les liens */
+        gap: 10px;
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     header a {
         font-size: 14px;
-        /* Liens plus petits */
+        padding: 5px;
+    }
+
+    /* 4. Le hero : centré et plus compact */
+    .hero-text {
+        padding: 40px 15px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    /* 5. Les sections : plus étroites pour ne pas coller aux bords */
+    #astuces,
+    #tutoriels,
+    #contact {
+        padding: 20px 15px;
+        margin: 10px auto;
+        width: 95%;
+    }
+
+    #astuces p,
+    #tutoriels p {
+        font-size: 14px;
+    }
+
+    #tutoriels li {
+        text-align: left;
+        font-size: 14px;
     }
 }
