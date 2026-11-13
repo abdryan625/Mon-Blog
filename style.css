@@ -1,0 +1,197 @@
+/* --- POLICES --- */
+@font-face {
+    font-family: 'MaSuperPolice';
+    src: url('Fonts/ma-police.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Satoshi-Light';
+    src: url('Fonts/Satoshi-Light.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* --- BASE --- */
+body {
+    font-family: 'Satoshi', sans-serif;
+    background-image: url('images/technologie\ .webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: overlay;
+    margin: 0;
+    min-height: 100vh;
+    color: white;
+}
+
+/* --- HEADER --- */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 43, 25, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.logo {
+    font-family: 'MaSuperPolice', sans-serif;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* --- LIENS ET LISTES --- */
+a {
+    text-decoration: none;
+    color: red;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+ul {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* --- HERO --- */
+.hero .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 80px 20px;
+    /* Un peu d'espace pour le hero */
+}
+
+h1 {
+    color: #eb1101;
+    text-decoration: underline #6b835e;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* --- SECTIONS (Astuces, Tutoriels, Contact) --- */
+section {
+    scroll-margin-top: 100px;
+}
+
+#astuces,
+#tutoriels,
+#contact {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 1100px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Centrer les paragraphes dans les sections */
+#astuces p,
+#tutoriels p {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+/* Mise en page des listes dans Tutoriels */
+#tutoriels ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#tutoriels li {
+    text-align: left;
+}
+
+/* Liens de contact en blanc */
+#contact a {
+    color: white;
+}
+
+#contact a:hover {
+    color: #eb1101;
+}
+
+/* Quand l'écran fait 768px de large ou moins (téléphones et petites tablettes) */
+@media (max-width: 768px) {
+
+    /* 1. Le header : on empile le logo et les liens */
+    header .container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 2. Les liens : on les laisse en ligne mais on les centre */
+    ul {
+        justify-content: center;
+        padding: 0;
+    }
+
+    /* 3. Le hero : on réduit les marges */
+    .hero-text {
+        padding: 40px 15px;
+    }
+
+    /* 4. Le titre principal : on le rend plus petit pour qu'il rentre */
+    h1 {
+        font-size: 2rem;
+        /* Au lieu de la taille par défaut qui est trop grande */
+    }
+
+    /* 5. Les sections : on réduit le padding pour gagner de la place */
+    #astuces,
+    #tutoriels,
+    #contact {
+        padding: 20px 15px;
+        margin: 10px auto;
+    }
+
+    /* 6. Les liens du header : on les rend plus faciles à taper avec le doigt */
+    header a {
+        padding: 8px;
+        display: inline-block;
+    }
+}
